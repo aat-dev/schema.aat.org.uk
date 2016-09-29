@@ -1,0 +1,47 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://schema.aws.aat.org.uk/v1/base/Log.json",
+  "title": "logEntry",
+  "type": "object",
+  "properties": {
+    "id": {
+      "description": "Stream name, eg OrderInformationPack/DR2513/001D0352-671F-4DCC-B070-4AA7C9D791EE",
+      "type": "string"
+    },
+    "ws_id": {
+      "description": "Web static ID. Mapped to the catalog it shows the intention of the current message",
+      "type": "string"
+    },
+    "record_id": {
+      "description": "Entity record ID",
+      "type": "string"
+    },
+    "object_type": {
+      "description": "The name of the common object type",
+      "type": "string"
+    },
+    "stage": {
+      "description": "Current stage of the message eg. Queue, ServiceManager, RandomWorker or CRM",
+      "type": "string"
+    },
+    "message": {
+      "description": "Message detailing the current status of the message",
+      "type": "string"
+    },
+    "error": {
+      "description": "True if this is an error message",
+      "type": "boolean",
+      "default": false
+    },
+    "complete": {
+      "description": "True if considered as a completed task",
+      "type": "boolean",
+      "default": false
+    },
+    "ts": {
+      "description": "ISO 8601 timestamp",
+      "type": "string"
+    }
+  },
+  "required": ["id", "ws_id", "record_id", "stage", "message", "error", "complete", "ts"]
+}

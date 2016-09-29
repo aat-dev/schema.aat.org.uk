@@ -1,0 +1,72 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "id": "http://schema.aws.aat.org.uk/v1/business/payment.json",
+    "title": "Payment",
+    "description": "Payment",
+    "type": "object",
+    "required": ["paymentId", "adjustmentType", "reason", "payingCustomer", "totalAmount", "invoiceNumbers", "invoiceAmounts", "status"],
+
+    "additionalProperties": false,
+    "properties": {
+        "paymentId": {
+            "type": {
+                "$ref": "http://json-schema.org/v1/base/uuid"
+            }
+        },
+        "adjustmentType": {
+            "type": "string",
+            "maxLength": 100
+        },
+        "reason": {
+            "type": "string",
+            "maxLength": 100
+        },
+        "refundMethod": {
+            "type": "string",
+            "enum": ["Card", "Cheque", "BACS"]
+        },
+        "payingCustomer": {
+            "type": {
+                "$ref": "http://json-schema.org/v1/business/common/CustomerId"
+            }
+        },
+        "totalAmount": {
+            "type": "number",
+            "maximum": 1000000000,
+            "maxInclusive": true
+        },
+        "invoiceNumbers": {
+            "type": "string",
+            "maxLength": 1000
+        },
+        "invoiceAmounts": {
+            "type": "string",
+            "maxLength": 1000
+        },
+        "creditCard": {
+            "$ref": "http://schema.aws.aat.org.uk/v1/business/common/CreditCardPayment"
+        },
+        "status": {
+            "type": "string",
+            "enum": ["Pending", "Awaiting Approval", "Approved", "Rejected"]
+        },
+        "additionalInformation": {
+            "type": "string",
+            "maxLength": 1000
+        },
+        "approvingUser": {
+            "type": "string",
+            "maxLength": 1000
+        },
+        "approvalDdate": {
+            "type": {
+                "#ref": "http://schema.aws.aat.org.uk/v1/base/AATDate"
+            }
+        },
+        "rejectionReason": {
+            "type": "string",
+            "maxLength": 1000
+        },
+    }
+
+}

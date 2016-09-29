@@ -1,0 +1,18 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://schema.aws.aat.org.uk/v1/business/common/CustomerId.json",
+  "title": "CustomerId",
+  "description": "Where everybody knows your name",
+  "type": "object",
+  "required": ["customerType", "customerId"],
+  "additionalProperties": false,
+  "properties": {
+    "customerType": {
+      "type": "string",
+      "enum": ["organisation", "individual"]
+    },
+    "customerId": {
+      "type": { "$ref": "http://schema.aws.aat.org.uk/v1/base/UUID.json" }
+    }
+  }
+}
