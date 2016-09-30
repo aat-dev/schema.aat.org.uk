@@ -1,16 +1,14 @@
 {
-  "$schema": "http://json-schema.org/draft-04/schema#",
-  "id": "http://schema.aws.aat.org.uk/v1/businsess/common/PersonTitle.json",
-  "title": "Person Title",
-  "description": "Used in the salutation",
-  "type": "object",
-  "additionalProperties": false,
-  "properties": {
-    "PersonTitle": {
-      "type": "string",
-      "enum": ["Mr", "Mrs", "Miss", "Ms", "Dr", "Rev", "Sir", "Lady", "Lord", "Dame", "Cllr", "Other", "RevdCannon", "Prof", "Sister", "Marchioness", "Brother"]
-
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "id": "http://schema.aws.aat.org.uk/v1/businsess/common/PersonTitle.json",
+    "title": "Person Title",
+    "description": "Used in the salutation",
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+        "PersonTitle": {
+            "type": "string",
+            "enum": ["Mr", "Mrs", "Miss", "Ms", "Dr", "Rev", "Sir", "Lady", "Lord", "Dame", "Cllr", "Other", "RevdCannon", "Prof", "Sister", "Marchioness", "Brother"]
+        }
     }
-
-  }
 }

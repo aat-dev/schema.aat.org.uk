@@ -6,34 +6,22 @@
     "type": "object",
     "properties": {
         "leadId": {
-            "type": {
-                "$ref": "http://schema.aws.aat.org.uk/v1/base/UUID"
-            }
+            "$ref": "http://schema.aws.aat.org.uk/v1/base/UUID"
         },
         "name": {
-            "type": {
-                "$ref": "http://schema.aws.aat.org.uk/v1/common/PersonName"
-            }
+            "$ref": "http://schema.aws.aat.org.uk/v1/common/PersonName"
         },
         "birthDate": {
-            "type": {
-                "$ref": "http://schema.aws.aat.org.uk/v1/base/AATDate"
-            }
+            "$ref": "http://schema.aws.aat.org.uk/v1/base/AATDate"
         },
         "address": {
-            "type": {
-                "$ref": "http://schema.aws.aat.org.uk/v1/common/PostalAddress"
-            }
+            "$ref": "http://schema.aws.aat.org.uk/v1/common/PostalAddress"
         },
         "telephone": {
-            "type": {
-                "$ref": "http://schema.aws.aat.org.uk/v1/common/PersonTelephone"
-            }
+            "$ref": "http://schema.aws.aat.org.uk/v1/common/PersonTelephone"
         },
         "email": {
-            "type": {
-                "$ref": "http://schema.aws.aat.org.uk/v1/base/AATEmail"
-            }
+            "$ref": "http://schema.aws.aat.org.uk/v1/base/AATEmail"
         },
         "referringMemberNumber": {
             "type": "string",
@@ -43,9 +31,7 @@
             "type": "boolean"
         },
         "estimatedStartDate": {
-            "type": {
-                "$ref": "http://schema.aws.aat.org.uk/v1/base/AATDate"
-            }
+            "$ref": "http://schema.aws.aat.org.uk/v1/base/AATDate"
         },
         "shareWith3rdParty": {
             "type": "boolean"
@@ -55,19 +41,17 @@
             "maxLength": 2000
         },
         "dateRecieved": {
-            "type": {
-                "$ref": "http://schema.aws.aat.org.uk/v1/base/AATDate"
-            }
+            "$ref": "http://schema.aws.aat.org.uk/v1/base/AATDate"
         },
         "leadQuestionResponse": {
             "question": {
                 "type": "array",
                 "items": {
-
-                    "type": {
-                        "$ref": "http://schema.aws.aat.org.uk/v1/common/QuestionResponse"
-                    }
-                }
+                    "$ref": "http://schema.aws.aat.org.uk/v1/common/QuestionResponse"
+                },
+                "minItems": 1,
+                "maxItems": 30,
+                "uniqueItems": true
             }
         },
         "leadQualifications": {
@@ -77,7 +61,10 @@
                     "type": {
                         "$ref": "http://schema.aws.aat.org.uk/v1/base/UUID"
                     }
-                }
+                },
+                "minItems": 1,
+                "maxItems": 10,
+                "uniqueItems": true
 
             }
         },
@@ -87,3 +74,4 @@
             "shareWith3rdParty", "additionalInformation", "dateRecieved"
         ]
     }
+  }

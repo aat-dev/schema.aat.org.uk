@@ -1,14 +1,14 @@
 {
-  "$schema": "http://json-schema.org/draft-04/schema#",
-  "id": "http://schema.aws.aat.org.uk/v1/businsess/common/AATSuffix.json",
-  "title": "AAT Suffix",
-  "description": "AAT Membership type suffixes",
-  "type": "object",
-  "additionalProperties": false,
-  "properties": {
-    "PersonTitle": {
-      "type": "string",
-      "enum": ["MAAT", "FMAAT", "AATQB", "MAAT(SA)", "FMAAT(SA)"]
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "id": "http://schema.aws.aat.org.uk/v1/businsess/common/AATSuffix.json",
+    "title": "AAT Suffix",
+    "description": "AAT Membership type suffixes",
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+        "PersonTitle": {
+            "type": "string",
+            "enum": ["MAAT", "FMAAT", "AATQB", "MAAT(SA)", "FMAAT(SA)"]
+        }
     }
-  }
 }

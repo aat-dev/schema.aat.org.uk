@@ -1,33 +1,32 @@
 {
-  "$schema": "http://json-schema.org/draft-04/schema#",
-  "id": "http://schema.aws.aat.org.uk/v1/businsess/common/CreditCardPayment.json",
-  "title": "Credit Card Payment",
-  "description": "Credit card payment info, particularly suited to favour Datacash",
-  "type": "object",
-  "additionalProperties": false,
-  "properties": {
-    "ccVirtualTillId": {
-      "type": "string",
-      "minLength": 8,
-      "maxLength": 100
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "id": "http://schema.aws.aat.org.uk/v1/businsess/common/CreditCardPayment.json",
+    "title": "Credit Card Payment",
+    "description": "Credit card payment info, particularly suited to favour Datacash",
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+        "ccVirtualTillId": {
+            "type": "string",
+            "minLength": 8,
+            "maxLength": 100
 
-    },
-    "ccSessionReference": {
-      "type": "string",
-      "minLength": 16,
-      "maxLength": 100
+        },
+        "ccSessionReference": {
+            "type": "string",
+            "minLength": 16,
+            "maxLength": 100
 
-    },
-    "ccAuthorisationReference": {
-      "type": "string",
-      "maxLength": 100
+        },
+        "ccAuthorisationReference": {
+            "type": "string",
+            "maxLength": 100
 
-    },
-    "ccErrorMsg": {
-      "type": "string",
-      "maxLength": 2000
+        },
+        "ccErrorMsg": {
+            "type": "string",
+            "maxLength": 2000
 
-    },
-
-  }
+        }
+    }
 }

@@ -9,9 +9,7 @@
     "additionalProperties": false,
     "properties": {
         "paymentId": {
-            "type": {
-                "$ref": "http://json-schema.org/v1/base/uuid"
-            }
+            "$ref": "http://json-schema.org/v1/base/uuid"
         },
         "adjustmentType": {
             "type": "string",
@@ -26,9 +24,7 @@
             "enum": ["Card", "Cheque", "BACS"]
         },
         "payingCustomer": {
-            "type": {
-                "$ref": "http://json-schema.org/v1/business/common/CustomerId"
-            }
+            "$ref": "http://json-schema.org/v1/business/common/CustomerId"
         },
         "totalAmount": {
             "type": "number",
@@ -59,14 +55,11 @@
             "maxLength": 1000
         },
         "approvalDdate": {
-            "type": {
-                "#ref": "http://schema.aws.aat.org.uk/v1/base/AATDate"
-            }
+            "#ref": "http://schema.aws.aat.org.uk/v1/base/AATDate"
         },
         "rejectionReason": {
             "type": "string",
             "maxLength": 1000
-        },
+        }
     }
-
 }
