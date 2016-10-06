@@ -1,0 +1,77 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "id": "http://schema.aws.aat.org.uk/v1/business/Lead.json",
+    "title": "Lead",
+    "description": "Lead is for the man",
+    "type": "object",
+    "properties": {
+        "leadId": {
+            "$ref": "http://schema.aws.aat.org.uk/v1/base/UUID"
+        },
+        "name": {
+            "$ref": "http://schema.aws.aat.org.uk/v1/common/PersonName"
+        },
+        "birthDate": {
+            "$ref": "http://schema.aws.aat.org.uk/v1/base/AATDate"
+        },
+        "address": {
+            "$ref": "http://schema.aws.aat.org.uk/v1/common/PostalAddress"
+        },
+        "telephone": {
+            "$ref": "http://schema.aws.aat.org.uk/v1/common/PersonTelephone"
+        },
+        "email": {
+            "$ref": "http://schema.aws.aat.org.uk/v1/base/AATEmail"
+        },
+        "referringMemberNumber": {
+            "type": "string",
+            "maxLength": 25
+        },
+        "previouslyRegsteredStudent": {
+            "type": "boolean"
+        },
+        "estimatedStartDate": {
+            "$ref": "http://schema.aws.aat.org.uk/v1/base/AATDate"
+        },
+        "shareWith3rdParty": {
+            "type": "boolean"
+        },
+        "additionalInformation": {
+            "type": "string",
+            "maxLength": 2000
+        },
+        "dateRecieved": {
+            "$ref": "http://schema.aws.aat.org.uk/v1/base/AATDate"
+        },
+        "leadQuestionResponse": {
+            "question": {
+                "type": "array",
+                "items": {
+                    "$ref": "http://schema.aws.aat.org.uk/v1/common/QuestionResponse"
+                },
+                "minItems": 1,
+                "maxItems": 30,
+                "uniqueItems": true
+            }
+        },
+        "leadQualifications": {
+            "qualifications": {
+                "type": "array",
+                "items": {
+                    "type": {
+                        "$ref": "http://schema.aws.aat.org.uk/v1/base/UUID"
+                    }
+                },
+                "minItems": 1,
+                "maxItems": 10,
+                "uniqueItems": true
+
+            }
+        },
+        "required": [
+            "leadId", "name", "birthDate", "address", "telephone", "email",
+            "referringMemberNumber", "previouslyRegsteredStudent", "estimatedStartDate",
+            "shareWith3rdParty", "additionalInformation", "dateRecieved"
+        ]
+    }
+  }

@@ -1,0 +1,40 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "id": "http://schema.aws.aat.org.uk/v1/business/common/PersonName.json",
+    "title": "Person name",
+    "description": "all the things that make the person callable, like daft punk",
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+        "givenName": {
+            "type": "string",
+            "maxLength": 50
+        },
+        "familyName": {
+            "type": "string",
+            "maxLength": 50
+        },
+        "additionalName": {
+            "type": "string",
+            "maxLength": 50
+        },
+        "givenName": {
+            "type": "string",
+            "maxLength": 50
+        },
+        "honorificPrefix": {
+            "$ref": "http://schema.aws.aat.org.uk/v1/business/common/PersonTitle.json"
+        },
+        "honorificSuffix": {
+            "type": "string",
+            "maxLength": 40
+        },
+        "aatSuffix": {
+                "$ref": "http://schema.aws.aat.org.uk/v1/business/common/AATSuffix.json"
+        },
+        "initials": {
+            "type": "string",
+            "maxLength": 6
+        }
+    }
+}
