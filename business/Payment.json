@@ -1,15 +1,16 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
-    "id": "http://schema.aws.aat.org.uk/v1/business/payment.json",
+    "id": "http://schema.aws.aat.org.uk/v1/business/Payment.json",
     "title": "Payment",
     "description": "Payment",
     "type": "object",
-    "required": ["paymentId", "adjustmentType", "reason", "payingCustomer", "totalAmount", "invoiceNumbers", "invoiceAmounts", "status"],
-
+    "required": ["paymentId", "reason", "payingCustomer", "totalAmount",  "status"],
     "additionalProperties": false,
     "properties": {
         "paymentId": {
-            "$ref": "http://json-schema.org/v1/base/uuid"
+            "type": {
+                "$ref": "http://schema.aws.aat.org.uk/v1/base/UUID.json"
+            }
         },
         "adjustmentType": {
             "type": "string",
@@ -24,27 +25,43 @@
             "enum": ["Card", "Cheque", "BACS"]
         },
         "payingCustomer": {
-            "$ref": "http://json-schema.org/v1/business/common/CustomerId"
+            "type": {
+                "$ref": "http://json-schema.org/v1/business/common/CustomerId.json"
+            }
         },
         "totalAmount": {
             "type": "number",
             "maximum": 1000000000,
             "maxInclusive": true
         },
-        "invoiceNumbers": {
-            "type": "string",
-            "maxLength": 1000
-        },
-        "invoiceAmounts": {
-            "type": "string",
-            "maxLength": 1000
+        "invoices": {
+            "type": "array",
+            "minItems": 0,
+            "maxItems": 10,
+            "uniqueItems": true,
+            "items": {
+                "type": "object",
+                "required": ["number", "amount"],
+                "additionalProperties": false,
+                "properties": {
+                    "number": {
+                        "type": "string"
+                    },
+                    "amount": {
+                        "type": "string",
+                        "maximum": 1000000000,
+                        "maxInclusive": true
+
+                    }
+                }
+            }
         },
         "creditCard": {
-            "$ref": "http://schema.aws.aat.org.uk/v1/business/common/CreditCardPayment"
+            "$ref": "http://schema.aws.aat.org.uk/v1/business/common/CreditCardPayment.json"
         },
         "status": {
             "type": "string",
-            "enum": ["Pending", "Awaiting Approval", "Approved", "Rejected"]
+            "enum": ["Pending", "Awaiting Approval from DataCash", "Awaiting Approval", "Approved", "Rejected"]
         },
         "additionalInformation": {
             "type": "string",
@@ -55,11 +72,14 @@
             "maxLength": 1000
         },
         "approvalDdate": {
-            "#ref": "http://schema.aws.aat.org.uk/v1/base/AATDate"
+            "type": {
+                "#ref": "http://schema.aws.aat.org.uk/v1/base/AATDate.json"
+            }
         },
         "rejectionReason": {
             "type": "string",
             "maxLength": 1000
         }
     }
+
 }
